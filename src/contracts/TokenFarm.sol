@@ -4,17 +4,15 @@ import "./DappToken.sol";
 import "./DaiToken.sol"; 
 
 contract TokenFarm { 
-
-string public name = "Dapp Token Farm";
-DappToken public dappToken;
-DaiToken public daiToken; 
+    string public name = "Dapp Token Farm";
+    DappToken public dappToken;
+    DaiToken public daiToken; 
 //state variables 
 
-constructor (DappToken _dappToken, DaiToken _daiToken) {
+    constructor (DappToken _dappToken, DaiToken _daiToken) {
     //store reference to dapp and dai tokens 
     //need address of deployed tokens 
     dappToken = _dappToken; 
     daiToken = _daiToken
-}
-
+    }
 }

@@ -9,10 +9,10 @@ contract TokenFarm {
     DaiToken public daiToken; 
 //state variables 
 
-    constructor (DappToken _dappToken, DaiToken _daiToken) {
+    constructor (DappToken _dappToken, DaiToken _daiToken) public {
     //store reference to dapp and dai tokens 
     //need address of deployed tokens 
     dappToken = _dappToken; 
-    daiToken = _daiToken
+    daiToken = _daiToken;
     }
 }

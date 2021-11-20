@@ -8,6 +8,10 @@ require('chai')
     .use(require('chai-as-promised'))
     .should()
 
+function tokens(n) { 
+    return  web3.utils.toWei('1000000', 'Ether');
+}
+
 contract('TokenFarm', (accounts) => {
     //tests 
     let daiToken, dappToken, tokenFarm
@@ -19,7 +23,7 @@ contract('TokenFarm', (accounts) => {
         let tokenFarm = await TokenFarm.new(dappToken.address, daiToken.address)
         
         //tranfer all dapp tokens to farm 
-        await dappToken.transfer(tokenFarm.address, '1000000000000000000000000')
+        await dappToken.transfer(tokenFarm.address, tokens('1000000'))
    
     })
 

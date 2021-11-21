@@ -1,3 +1,5 @@
+const { assert } = require('chai');
+
 const DaiToken = artifacts.require('DaiToken')
 const DappToken = artifacts.require('DappToken')
 const TokenFarm = artifacts.require('TokenFarm')
@@ -53,6 +55,12 @@ it('contract has tokens', async () => {
     assert.equal(balance.toString(), tokens('1000000'))
   })
 
-
+  describe('Farming tokens', async () => {
+    it ('rewards investors for staking mDai tokens', async () => {
+      let result 
+      result = await daiToken.balanceOf(investor)
+      assert.equal(result.toString(), tokens('100'), 'investor Mock DAI wallet balance correct before staking')
+    })
+  })
 
 })
